@@ -1,0 +1,35 @@
+# Copyright 2021 Intel Corporation
+# SPDX-License-Identifier: Apache 2.0
+
+FROM ubuntu:20.04
+RUN apt-get update && apt-get install -y openjdk-11-jdk
+RUN apt-get install -y wget openssl
+
+# Create a user 'verifier'.
+# If the user name is updated, please update the same in cmdDocker.sh.
+# Update the same in the application.properties file in
+# /src/main/resources and rebuild the service binary before generating the docker image.
+
+RUN useradd -ms /bin/bash verifier
+USER verifier
+WORKDIR /home/verifier/
+RUN mkdir ./certs
+
+# Copy dependencies to container
+
+COPY *.jar /home/verifier
+COPY cryptoMaterial.tgz /home/verifier
+COPY cryptoMaterial.tgz.sig /home/verifier
+COPY cmdDocker.sh /home/verifier
+COPY libepid_verifier.so /home/verifier
+COPY libepid_verifier_wrap.so /home/verifier
+COPY certs/ /home/verifier/certs
+
+# Start service
+
+EXPOSE 1180
+ENTRYPOINT ["bash", "cmdDocker.sh"]
+
+# Docker image healthcheck
+
+HEALTHCHECK --interval=30s --timeout=30s CMD wget --spider -Y off http://localhost:1180/health || exit 1 

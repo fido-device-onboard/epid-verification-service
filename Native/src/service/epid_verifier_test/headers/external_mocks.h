@@ -1,0 +1,25 @@
+// Copyright 2021 Intel Corporation
+// SPDX-License-Identifier: Apache 2.0
+
+#ifndef EXTERNAL_MOCKS_H_
+#define EXTERNAL_MOCKS_H_
+
+#include <cstdio>
+
+#define CFUNC extern "C"
+
+#define BEHAVIOR_OK 0
+
+#define BEHAVIOR_SIG_INVALID 1
+#define BEHAVIOR_SIG_REVOKED_IN_SIGRL 2
+#define BEHAVIOR_VERIFIER_CREATE_FAIL 3
+#define BEHAVIOR_VERIFIER_SET_HASH_ALG_FAIL 4
+#define BEHAVIOR_VERIFIER_SET_SIG_RL_FAIL 5
+#define BEHAVIOR_VERIFY_FAIL 6
+#define BEHAVIOR_SIG_REVOKED_IN_PRIVRL 7
+#define BEHAVIOR_VERIFIER_SET_PRIV_RL_FAIL 8
+#define BEHAVIOR_VERIFIER_SET_BASENAME_FAIL 9
+
+extern int g_behavior;
+
+#endif

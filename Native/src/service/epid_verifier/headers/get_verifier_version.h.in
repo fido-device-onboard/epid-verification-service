@@ -1,0 +1,14 @@
+// Copyright 2021 Intel Corporation
+// SPDX-License-Identifier: Apache 2.0
+
+#ifndef EPIDVERIFIER_GET_VERIFIER_VERSION_H
+#define EPIDVERIFIER_GET_VERIFIER_VERSION_H
+
+#define EPID_VERIFIER_VERSION "@EPID_VERIFIER_VERSION@"
+
+const char* get_verifier_version()
+{
+    return EPID_VERIFIER_VERSION;
+}
+
+#endif //EPIDVERIFIER_GET_VERIFIER_VERSION_H

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright 2021 Intel Corporation
+  SPDX-License-Identifier: Apache 2.0 -->
+
+<configuration>
+  <conversionRule conversionWord="xid" converterClass="org.fidoalliance.fdo.epid.verification.logging.TransactionConverter"/>
+  <conversionRule conversionWord="ip" converterClass="org.fidoalliance.fdo.epid.verification.logging.IpConverter"/>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>
+        [DATE=%d{yyyy-MM-dd HH:mm:ss.SSS}] [XID=%xid] [IP=%ip] [LEVEL=%level] [CLASS=%logger{36}] [MESSAGE=%msg]%n
+      </Pattern>
+    </encoder>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>

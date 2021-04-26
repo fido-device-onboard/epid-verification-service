@@ -1,0 +1,30 @@
+# Copyright 2019 Intel Corporation
+# SPDX-License-Identifier: Apache 2.0
+
+version: '2.4'
+
+services:
+
+    epid-verification-service:
+        image: epid-verification-service:0.5
+        container_name: epid-verification-service
+        expose:
+            - "1180"
+        ports:
+            - "1180:1180"
+        build:
+            context: .
+            dockerfile: Dockerfile-epid-verification
+        restart: on-failure:5
+        network_mode: host
+        healthcheck:
+            test: wget --spider -Y off http://localhost:1180/health || exit 1 
+            interval: 1m
+            timeout: 30s
+            retries: 1
+        cpu_shares: 5
+        mem_limit: 500m
+        mem_reservation: 200m
+        env_file:
+          - ./epid-verification.env
+        pids_limit: 100

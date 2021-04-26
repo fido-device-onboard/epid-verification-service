@@ -1,0 +1,26 @@
+---
+BasedOnStyle: WebKit
+---
+Language: Cpp
+AlignAfterOpenBracket: true
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+BinPackArguments: true
+BreakBeforeBraces: Allman
+ColumnLimit: 160
+DerivePointerAlignment: false
+PointerAlignment: Right
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+AlignTrailingComments: true
+BinPackParameters: true
+IndentWidth: 4
+PenaltyBreakString: 1000
+PenaltyBreakComment: 1000
+PenaltyBreakBeforeFirstCallParameter: 2000
+BreakBeforeBinaryOperators: NonAssignment

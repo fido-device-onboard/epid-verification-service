@@ -1,0 +1,21 @@
+# Copyright 2021 Intel Corporation
+# SPDX-License-Identifier: Apache 2.0
+
+function(resolve_dependencies target)
+	message(STATUS "Processing dependencies for target: " ${target})
+    set(dependencies_path ${base_path}/dependencies)
+    file(MAKE_DIRECTORY ${dependencies_path}/tmp)
+    file(STRINGS dependencies.txt remote_deps)
+
+    foreach(dependency_string ${remote_deps})
+        string(REPLACE "," ";" dependency ${dependency_string})
+        list(GET dependency 0 dep_name)
+		set(dep_unpack_path ${dependencies_path}/${dep_name})
+        message(STATUS "Processing dependency: " ${dep_name})
+
+		include_directories(${dep_unpack_path})
+        include_directories(${dep_unpack_path}/include)
+        file(GLOB unpacked_libs ${dep_unpack_path}/make/*.a ${dep_unpack_path}/example/util/src/*.a ${dep_unpack_path}/epid/verifier/*.a ${dep_unpack_path}/epid/common-testhelper/*.a ${dep_unpack_path}/epid/common/*.a ${dep_unpack_path}/epid/member/*.a ${dep_unpack_path}/ext/argtable3/*.a ${dep_unpack_path}/ext/googletest/*.a ${dep_unpack_path}/ext/ipp-crypto/sources/ippcp/*.a ${dep_unpack_path}/_install/lib/posix-x86_64/*.a )
+		target_link_libraries(${target} ${unpacked_libs})
+    endforeach(dependency_string)
+endfunction(resolve_dependencies target)

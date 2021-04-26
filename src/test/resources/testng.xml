@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!-- Copyright 2021 Intel Corporation
+  SPDX-License-Identifier: Apache 2.0 -->
+
+<suite name = "EPID Verification Service Logger Suite">
+    <listeners>
+        <listener class-name = "org.fidoalliance.fdo.epid.verification.testng.custom.logs.CustomLogs" />
+    </listeners>
+    <packages>
+        <test name = "EPID Verificationcle Service Authenticators Test">
+            <package name="org.fidoalliance.fdo.epid.verification.controllers.v2"/>
+            <package name="org.fidoalliance.fdo.epid.verification.logging"/>
+            <package name="org.fidoalliance.fdo.epid.verification.model.epid"/>
+            <package name="org.fidoalliance.fdo.epid.verification.model.requests"/>
+            <package name="org.fidoalliance.fdo.epid.verification.repositories"/>
+            <package name="org.fidoalliance.fdo.epid.verification.services.proof"/>
+            <package name="org.fidoalliance.fdo.epid.verification.utils"/>
+        </test>
+    </packages>
+</suite>
