@@ -173,7 +173,7 @@ $ curl --cacert ./certs/ca.cert.pem https://localhost:1180/health
 Expected result:
 ```
 {
-	"version": "0.5"
+	"version": "1.0-SNAPSHOT"
 }
 ```
 
