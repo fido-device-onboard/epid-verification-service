@@ -1,0 +1,29 @@
+# Copyright 2021 Intel Corporation
+# SPDX-License-Identifier: Apache 2.0
+
+version: "2.4"
+
+services:
+
+  epid_verification_service_builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        use_remote : ${use_remote}
+    image: epid_verification_service_builder
+    container_name: epid_verification_service_builder
+    # Mapping to the user workspace of 'epiduser' as created in the Dockerfile.
+    # If the username is updated in the Dockerfile, please replace 'epiduser' with the same.
+    volumes:
+      - ./../../epid-verification-service:/home/epiduser/epid-verification-service:rw
+    environment:
+      - http_proxy=${http_proxy}
+      - https_proxy=${https_proxy}
+      - no_proxy=${no_proxy}
+
+    mem_limit: 1500m
+    mem_reservation: 1000m
+    cpu_shares: 5
+    pids_limit: 100
+    network_mode: host
