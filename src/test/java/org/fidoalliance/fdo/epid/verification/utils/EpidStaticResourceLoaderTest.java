@@ -49,7 +49,7 @@ public class EpidStaticResourceLoaderTest {
 
   @Test
   public void testGetSigrlEpid11ProductionPositive() throws Exception {
-    String epid11Group5SigrlDevPath = "file:cryptoMaterialPath/static/epid11/00000005/sigrl";
+    String epid11Group5SigrlDevPath = "file:cryptoMaterialPath/static/prod/epid11/00000005/sigrl";
     Mockito.when(resourceLoader.getResource(epid11Group5SigrlDevPath))
         .thenReturn(new ByteArrayResource(EPID11_GROUP5_SIGRL));
     Mockito.when(environment.getActiveProfiles()).thenReturn(new String[] {"production"});

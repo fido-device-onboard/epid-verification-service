@@ -11,7 +11,7 @@ then
     tar -zxf cryptoMaterial.tgz -C $CRYPTO_DIR cryptoMaterial/static/dev --strip-components=2
 else
     # copying production cryptomaterial:
-    tar -zxf cryptoMaterial.tgz -C $CRYPTO_DIR cryptoMaterial/static/prod --strip-components=3
+    tar -zxf cryptoMaterial.tgz -C $CRYPTO_DIR cryptoMaterial/static/prod --strip-components=2
 fi
 
 SSL_KEY_STORE="verification-service-keystore.p12"
