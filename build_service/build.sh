@@ -17,9 +17,8 @@ REMOTE_BRANCH=master
 
 if [ "$use_remote" = "1" ]; then
     echo "Building $REMOTE_URL : $REMOTE_BRANCH"
-    cd /tmp/
-    git clone $REMOTE_URL
     cd /tmp/epid-verification-service/
+    git clone $REMOTE_URL .
     git checkout $REMOTE_BRANCH
 
     # Building Dependencies:
