@@ -24,7 +24,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class EpidStaticResourceLoader {
 
-  private static final String PRODUCTION_DIR = "";
+  private static final String PRODUCTION_DIR = "/prod";
   private static final String DEVELOPMENT_DIR = "/dev";
 
   private final String cryptoMaterialPath;

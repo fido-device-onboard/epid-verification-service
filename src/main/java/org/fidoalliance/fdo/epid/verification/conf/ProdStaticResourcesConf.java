@@ -19,7 +19,7 @@ public class ProdStaticResourcesConf implements WebMvcConfigurer {
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    String resourceLocation = "file:" + cryptoMaterialPath + "/static/";
+    String resourceLocation = "file:" + cryptoMaterialPath + "/static/prod/";
     registry
         .addResourceHandler(
             "/**/" + EpidResource.PRIVRL.toLowerCaseString(),
