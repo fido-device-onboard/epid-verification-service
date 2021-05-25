@@ -1,14 +1,13 @@
 FROM ubuntu:20.04
 
-RUN apt-get -y  update && apt-get -y upgrade
+RUN apt-get clean && apt-get -y update && apt-get -y upgrade
 
 RUN bash -c 'echo "deb http://dk.archive.ubuntu.com/ubuntu/ xenial main" >> /etc/apt/sources.list'
 RUN bash -c 'echo "deb http://dk.archive.ubuntu.com/ubuntu/ xenial universe" >> /etc/apt/sources.list'
-RUN apt update
-
-RUN apt -y install g++-4.9
-RUN apt -y install g++-4.9-multilib
+RUN apt-get -y update
+RUN apt-get -y install g++-4.9 g++-4.9-multilib
 RUN bash -c 'head -n -2 /etc/apt/sources.list > intermediate_file;mv -f intermediate_file /etc/apt/sources.list'
+RUN apt-get -y update
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 10
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 10
 RUN update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
@@ -25,4 +24,4 @@ RUN mkdir -p /home/epiduser/epid-verification-service/ ; chown -R epiduser:epidu
 USER epiduser
 
 WORKDIR /home/epiduser/epid-verification-service/
-ENTRYPOINT ./build_service/build.sh
+ENTRYPOINT ./build/build.sh
