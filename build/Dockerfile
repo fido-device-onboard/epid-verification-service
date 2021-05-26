@@ -21,6 +21,7 @@ RUN apt-get install -y openjdk-11-jdk maven make git curl swig cmake unzip
 # Create a user 'epiduser'. If the user name is updated, please update the same in docker-compose.yaml.
 RUN useradd -ms /bin/bash epiduser
 RUN mkdir -p /home/epiduser/epid-verification-service/ ; chown -R epiduser:epiduser /home/epiduser/epid-verification-service/
+RUN mkdir -p /home/epiduser/.m2/; chown -R epiduser:epiduser /home/epiduser/.m2
 USER epiduser
 
 WORKDIR /home/epiduser/epid-verification-service/
