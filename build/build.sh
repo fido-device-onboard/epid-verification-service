@@ -55,8 +55,8 @@ if [ "$use_remote" = "1" ]; then
   build_source /tmp/epid-verification-service
 
   # Replace the demo folder in local copy
-  rm -rf /home/epiduser/epid-verification-service/demo/*
-  cp -arfv /tmp/epid-verification-service/demo/* /home/epiduser/epid-verification-service/demo/
+  rm -rf /home/fdouser/epid-verification-service/demo/*
+  cp -arfv /tmp/epid-verification-service/demo/* /home/fdouser/epid-verification-service/demo/
 else
   echo "Building local copy"
   build_source `pwd`

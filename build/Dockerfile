@@ -18,11 +18,11 @@ RUN update-alternatives --set c++ /usr/bin/g++
 RUN apt-get install -y software-properties-common && add-apt-repository -y ppa:ubuntu-toolchain-r/test
 RUN apt-get install -y openjdk-11-jdk maven make git curl swig cmake unzip
 
-# Create a user 'epiduser'. If the user name is updated, please update the same in docker-compose.yaml.
-RUN useradd -ms /bin/bash epiduser
-RUN mkdir -p /home/epiduser/epid-verification-service/ ; chown -R epiduser:epiduser /home/epiduser/epid-verification-service/
-RUN mkdir -p /home/epiduser/.m2/; chown -R epiduser:epiduser /home/epiduser/.m2
-USER epiduser
+# Create a user 'fdouser'. If the user name is updated, please update the same in docker-compose.yaml.
+RUN useradd -ms /bin/bash fdouser
+RUN mkdir -p /home/fdouser/epid-verification-service/ ; chown -R fdouser:fdouser /home/fdouser/epid-verification-service/
+RUN mkdir -p /home/fdouser/.m2/; chown -R fdouser:fdouser /home/fdouser/.m2
+USER fdouser
 
-WORKDIR /home/epiduser/epid-verification-service/
+WORKDIR /home/fdouser/epid-verification-service/
 ENTRYPOINT ./build/build.sh
