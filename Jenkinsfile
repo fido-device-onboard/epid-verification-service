@@ -1,6 +1,7 @@
-node(buildersLabels.getLabel("linux_builder")){
+node('ccode'){
 
   stage('Clone epid-verification-service'){
+    cleanWs()
     checkout scm
   }
 
