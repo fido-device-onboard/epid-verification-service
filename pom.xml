@@ -477,9 +477,9 @@
         <version>${pgpverify-plugin.version}</version>
         <executions>
           <execution>
-          <goals>
-            <goal>check</goal>
-          </goals>
+            <goals>
+              <goal>check</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
