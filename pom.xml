@@ -20,34 +20,37 @@
   mvn versions:update-properties
   -->
   <properties>
-    <spring-boot-starter-jetty.version>2.4.5</spring-boot-starter-jetty.version>
-    <spring-boot-starter-data-rest.version>2.4.5</spring-boot-starter-data-rest.version>
-    <spring-boot-starter-validation.version>2.4.5</spring-boot-starter-validation.version>
-    <spring-aspects.verion>5.3.6</spring-aspects.verion>
-    <bcprov-jdk15on.version>1.68</bcprov-jdk15on.version>
-    <bcpkix-jdk15on.version>1.68</bcpkix-jdk15on.version>
-    <jjwt.version>0.9.1</jjwt.version>
-    <jedis.version>3.5.2</jedis.version>
+    <!-- Dependency Vrsion -->
+    <bcpkix-jdk15on.version>1.69</bcpkix-jdk15on.version>
+    <bcprov-jdk15on.version>1.69</bcprov-jdk15on.version>
     <guava.version>30.1.1-jre</guava.version>
-    <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
-    <jackson-core.version>2.12.3</jackson-core.version>
     <jackson-annotations.version>2.12.3</jackson-annotations.version>
+    <jackson-core.version>2.12.3</jackson-core.version>
     <jackson-databind.version>2.12.3</jackson-databind.version>
-    <lombok.version>1.18.20</lombok.version>
-    <jaxb-api.version>2.3.1</jaxb-api.version>
+    <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
     <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-    <testng.version>7.4.0</testng.version>
+    <jaxb-api.version>2.3.1</jaxb-api.version>
+    <jedis.version>3.6.1</jedis.version>
+    <jjwt.version>0.9.1</jjwt.version>
+    <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
+    <lombok.version>1.18.20</lombok.version>
     <powermock-api-mockito2.version>2.0.9</powermock-api-mockito2.version>
     <powermock-module-testng.version>2.0.9</powermock-module-testng.version>
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <spring-aspects.version>5.3.8</spring-aspects.version>
     <spring-boot-maven-plugin.version>2.4.5</spring-boot-maven-plugin.version>
-    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-    <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
+    <spring-boot-starter-data-rest.version>2.4.7</spring-boot-starter-data-rest.version>
+    <spring-boot-starter-jetty.version>2.4.7</spring-boot-starter-jetty.version>
+    <spring-boot-starter-validation.version>2.4.7</spring-boot-starter-validation.version>
+    <testng.version>7.4.0</testng.version>
+
+    <!-- Maven Dependency -->
+    <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-    <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
-    <maven-project-info-reports-plugin.version>3.1.1</maven-project-info-reports-plugin.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+    <maven-project-info-reports-plugin.version>3.1.1</maven-project-info-reports-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <pgpverify-plugin.version>1.14.0</pgpverify-plugin.version>
   </properties>
 
@@ -88,7 +91,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>${spring-aspects.verion}</version>
+      <version>${spring-aspects.version}</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
