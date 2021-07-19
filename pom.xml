@@ -36,7 +36,7 @@
     <lombok.version>1.18.20</lombok.version>
     <powermock-api-mockito2.version>2.0.9</powermock-api-mockito2.version>
     <powermock-module-testng.version>2.0.9</powermock-module-testng.version>
-    <spring-aspects.verion>5.3.8</spring-aspects.verion>
+    <spring-aspects.version>5.3.8</spring-aspects.version>
     <spring-boot-maven-plugin.version>2.4.5</spring-boot-maven-plugin.version>
     <spring-boot-starter-data-rest.version>2.4.7</spring-boot-starter-data-rest.version>
     <spring-boot-starter-jetty.version>2.4.7</spring-boot-starter-jetty.version>
@@ -91,7 +91,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>${spring-aspects.verion}</version>
+      <version>${spring-aspects.version}</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
