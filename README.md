@@ -54,7 +54,7 @@ The external dependencies are built in \<epid-verification-service\>/Native/src/
 
 #### Build EPID SDK
 
-EPID Verification service uses [EPID SDK](https://github.com/Intel-EPID-SDK/epid-sdk) for performing signature verification of EPID based devices. Switch to `\<epid-verification-service\>/Native/src/service/dependencies` and run following commands to build EPID SDK.
+EPID Verification service uses [EPID SDK](https://github.com/Intel-EPID-SDK/epid-sdk) for performing signature verification of EPID based devices. Switch to `<epid-verification-service>/Native/src/service/dependencies` and run following commands to build EPID SDK.
 
 ***NOTE***: The latest version of EPID SDK compatible with EPID Verification service is `v7.0.1`.
 
