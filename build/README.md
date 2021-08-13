@@ -28,7 +28,7 @@ You also have the option to change the remote repository address as well as the 
     REMOTE_BRANCH=branch-name
 
 ## Expected Outcome
-As the docker script finishes its execution successfully, the ```.war``` file of the EPID-Verification-Service will be present in ```<epid-verification-service>/demo/``` folder.
+As the docker script finishes its execution successfully, the ```.jar``` file of the EPID-Verification-Service will be present in ```<epid-verification-service>/demo/``` folder.
 
 ## Updating Proxy Info (Optional )
 If you are working behind a proxy network, ensure that both http and https proxy variables are set.
