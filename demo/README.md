@@ -1,7 +1,8 @@
+
 # Table of Contents
 1. [System Requirements](#system-requirements)
-1. [Starting EPID Verification service in Docker](#starting-epid-verification-service-in-docker)
-    * [Docker Dependent Files](#docker-dependent-files)
+1. [Starting EPID Verification service in Docker/Podman](#starting-epid-verification-service-in-docker)
+    * [Docker/Podman Dependent Files](#docker-dependent-files)
     * [Cryptomaterials Signature Verification](#cryptomaterials-signature-verification)
     * [Create Java Keystore Files](#create-java-keystore-files)
     * [Docker-compose Configuration](#docker-compose-configuration)
@@ -9,21 +10,27 @@
     * [Start the Docker Container](#start-the-docker-container)
     * [Docker Container Login](#docker-container-login)
     * [Stop the Docker Container](#stop-the-docker-container)
-    * [Clean up Containers](#clean-up-containers)
+    * [Clean up Docker Containers](#clean-up-docker-containers)
+1. [Podman Commands](#podman-commands)
+    * [Start the Podman Container](#start-the-podman-container)
+    * [Podman Container Login](#podman-container-login)
+    * [Stop the Podman Container](#stop-the-podman-container)
+    * [Clean up Podman Containers](#clean-up-podman-containers)
 
-***NOTE***: The demo is provided solely to demonstrate the operation of the FIDO Device Onboard (FDO) EPID Verification service with an example database and configuration. This demo is not recommended for use in any production capacity. Appropriate security measures with respect to keystore management and configuration management should be considered while performing production deployment.
+
+***NOTE***: The demo is provided solely to demonstrate the operation of the FIDO Device Onboard (FDO) EPID Verification service with an example database and configuration. This demo is not recommended for use in any production capacity. Appropriate security measures with respect to keystore management and configuration management should be considered while performing production deployment.
 
 # System Requirements
 
-* Operating system: Ubuntu 20.04.
+* Operating system: Ubuntu 20.04 / RHEL 8.4.
 
 *  Linux packages:<br/><br/>
-`Docker engine (minimum version 18.09)`<br/><br/>
-`Docker-compose (minimum version 1.21.2)`<br/>
+`Docker engine (minimum version 18.09) / Podman engine (For RHEL)`<br/><br/>
+`Docker-compose (minimum version 1.21.2) / Podman-compose (v0.1.5) (For RHEL)`<br/>
 
 # Starting EPID Verification service in Docker
 
-## Docker Dependent Files
+## Docker/Podman Dependent Files
 
 The EPID Verification service requires the Cryptomaterials and the EPID SDK library files during runtime. These files are copied to the demo folder while building the source code.
 
@@ -43,7 +50,7 @@ The EPID Verification service will run in HTTP mode if the keystore is not provi
 
 ***IMPORTANT***:
 
--  This is an example implementation using simplified credentials. This must be changed while performing production deployment
+-  This is an example implementation using simplified credentials. This must be changed while performing production deployment
 
 ## Docker-compose Configuration
 Review the docker-compose.yml file and follow instructions in the file to customize for your environment.
@@ -73,9 +80,40 @@ $ sudo docker exec -it <container-id> bash
 $ sudo docker stop $(sudo docker ps -a -q)
 ```
 
-## Clean up Containers
+## Clean up Docker Containers
 
 * Use the following command to delete all the Docker artifacts. (Note: Docker containers must be stopped before deleting them)
 ```
 $ sudo docker system prune -a
+```
+# Podman Commands
+
+## Start the Podman Container
+* Use the following command to start the Podman container.
+```
+$ podman-compose up -d --build
+```
+* Your Podman container is now ready to support TO0 & TO1 protocol operations.
+
+## Podman Container Login
+* Use the following command to login to Podman container.
+```
+$ podman exec -it <container-name> bash
+  OR
+$ podman exec -it <container-id> bash
+```
+* Your container should be in running state for login.
+
+## Stop the Podman Container
+
+* Use the following command to stop all running Podman containers.
+```
+$ podman stop -a
+```
+
+## Clean up Podman Containers
+
+* Use the following command to delete all the Podman artifacts. (Note: Podman containers must be stopped before deleting them)
+```
+$ podman system prune -a
 ```

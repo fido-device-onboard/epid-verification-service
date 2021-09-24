@@ -17,7 +17,7 @@ services:
     # If the username is updated in the Dockerfile, please replace 'fdouser' with the same.
     volumes:
       - ./../../epid-verification-service:/home/fdouser/epid-verification-service:rw
-      - fdo-m2:/home/fdouser/.m2:rw
+      - ~/.m2:/home/fdouser/.m2:rw
     environment:
       - use_remote=${use_remote}
       - http_proxy=${http_proxy}
@@ -29,5 +29,3 @@ services:
     cpu_shares: 5
     pids_limit: 100
     network_mode: host
-volumes:
-  fdo-m2:
