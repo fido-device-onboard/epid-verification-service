@@ -7,10 +7,10 @@ RUN yum install -y yum-utils
 RUN yum-config-manager --enable codeready-builder-for-rhel-8-x86_64-rpms
 RUN yum install -y java-11-openjdk-devel make git curl swig cmake unzip wget gcc gcc-c++
 
-ENV MVN_VERSION=3.8.2 
+ENV MVN_VERSION=3.8.3 
 
 RUN curl -sS \
-    http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.tar.gz \
+    https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.tar.gz \
     -o /tmp/apache-maven-${MVN_VERSION}-bin.tar.gz && \
     tar xvzf /tmp/apache-maven-${MVN_VERSION}-bin.tar.gz -C /tmp && \
     mv /tmp/apache-maven-${MVN_VERSION} /var/local/ && \
