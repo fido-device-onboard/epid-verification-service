@@ -13,4 +13,4 @@ sed -i 's/java-11-openjdk-amd64/java-11-openjdk/' build/build.sh
 sed -i 's/Dockerfile-epid-verification/Podmanfile-epid-verification/' demo/docker-compose.yml
 
 #Native/src/service/
-sed -i 's/-D_FORTIFY_SOURCE=2/-D_FORTIFY_SOURCE=2 -O2/' Native/src/service/CMakeLists.txt
+grep -q 'D_FORTIFY_SOURCE=2 -O2' Native/src/service/CMakeLists.txt || sed -i 's/-D_FORTIFY_SOURCE=2/-D_FORTIFY_SOURCE=2 -O2/' Native/src/service/CMakeLists.txt
