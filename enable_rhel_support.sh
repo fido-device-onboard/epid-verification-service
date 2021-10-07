@@ -6,7 +6,9 @@
 
 #build/
 sed -i 's/Dockerfile/Podmanfile/' build/docker-compose.yml
+sed -i '/- fdo-m2:\/home\/fdouser\/.m2:rw/d' build/docker-compose.yml
 sed -i 's/:rw/:Z/' build/docker-compose.yml
+grep -q 'fdo-m2: {}' build/docker-compose.yml || sed -i 's/fdo-m2:/fdo-m2: {}/' build/docker-compose.yml
 sed -i 's/java-11-openjdk-amd64/java-11-openjdk/' build/build.sh
 
 #demo/
