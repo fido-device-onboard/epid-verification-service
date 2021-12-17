@@ -6,7 +6,7 @@ version: '2.4'
 services:
 
     epid-verification-service:
-        image: epid-verification-service:1.0
+        image: epid-verification-service:1.0.1-SNAPSHOT
         container_name: epid-verification-service
         expose:
             - "1180"
