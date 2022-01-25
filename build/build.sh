@@ -45,7 +45,7 @@ build_source()
 }
 
 REMOTE_URL=https://github.com/secure-device-onboard/epid-verification-service.git
-REMOTE_BRANCH=master
+REMOTE_BRANCH=1.0-rel
 
 if [ "$use_remote" = "1" ]; then
   echo "Building $REMOTE_URL : $REMOTE_BRANCH"
