@@ -1,19 +1,20 @@
+
 # About
 
-Docker Script for Building EPID-Verification-Service repository. Using this script you can build the local copy of the repository as well as the latest upstream of the repository.
+Docker/Podman Script for Building EPID-Verification-Service repository. Using this script you can build the local copy of the repository as well as the latest upstream of the repository.
 
 ## Prerequisites
 
-- Operating system: **Ubuntu 20.04.**
+- Operating system: **Ubuntu 20.04 / RHEL 8.4.**
 
-- Docker engine : **18.06.0**
+- Docker engine : **18.06.0** / Podman engine (For RHEL).
 
-- Docker-compose : **1.23.2**
+- Docker-compose : **1.23.2** / Podman-compose: **0.1.5** (For RHEL).
 
 
 
 ## Usage
-
+####  Docker Commands
 When you want to build a local copy of the repository.
 
 ``` sudo docker-compose up --build ```
@@ -22,13 +23,21 @@ When you want to build the latest upstream of the repository.
 
 ``` sudo use_remote=1 docker-compose up --build ```
 
+#### Podman Commands
+When you want to build a local copy of the repository.
+
+``` podman-compose up --build ```
+
+When you want to build the latest upstream of the repository.
+
+``` use_remote=1 podman-compose up --build ```
 You also have the option to change the remote repository address as well as the remote repository branch in build.sh file.
 
     REMOTE_URL=link-to-your-fork
     REMOTE_BRANCH=branch-name
 
 ## Expected Outcome
-As the docker script finishes its execution successfully, the ```.jar``` file of the EPID-Verification-Service will be present in ```<epid-verification-service>/demo/``` folder.
+As the docker/podman script finishes its execution successfully, the ```.jar``` file of the EPID-Verification-Service will be present in ```<epid-verification-service>/demo/``` folder.
 
 ## Updating Proxy Info (Optional )
 If you are working behind a proxy network, ensure that both http and https proxy variables are set.
