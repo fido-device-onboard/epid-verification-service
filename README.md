@@ -29,16 +29,16 @@ FDO EPID Verification service is a software service that assists FDO Rendezvous 
 
 ***NOTE***: Use the following commands to enable EPID Verification Service support on RHEL.
 ```
-bash enable_rhel_support.sh
+bash ./enable_rhel_support.sh
 echo $'\nexport PODMAN_USERNS=keep-id' >> ~/.bashrc
 source ~/.bashrc
 ```
 
 ### Source Layout
 
-For the instructions in this document, <epid-verification-service> refers to the path of the EPID Verification service source folder `epid-verification-service`.
+For the instructions in this document, <epid-verification-service> refers to the path of the EPID Verification Service source folder `epid-verification-service`.
 
-EPID Verification service source code is organized into the following sub-folders.
+EPID Verification Service source code is organized into the following sub-folders.
 
 * `Jenkins` : It contains files for building service and running smoke test on the repo.
 
@@ -58,7 +58,7 @@ export JAVA_HOME=<path-to-java-11-jdk>
 
 #### Pre-requisites for Building Dependencies
 
-The external dependencies are built in \<epid-verification-service\>/Native/src/service/dependencies folder. This folder needs to be created if it doesn't exist.
+The external dependencies are built in \<epid-verification-service\>/Native/src/service/dependencies folder. This folder needs to be created, if it doesn't exist.
 
 #### Build EPID SDK
 
@@ -116,7 +116,7 @@ $ cd <epid-verification-service>/Native
 $ ./build.sh --clean
 ```
 
-To generate unit tests metrics, execute the following command.
+To generate unit test metrics, execute the following command.
 
 ```
 $ mvn clean verify
@@ -131,7 +131,7 @@ Keystore is used to store SSL certificates in the Java* programming language.
 ```
 keystore - "verification-service-keystore.p12"
 ```
-Default passwords for both: ver!f!c@t!0n
+Default passwords for keystore: ver!f!c@t!0n
 
 Visit [page][1] for instructions on how to generate keystore and truststore.
 
@@ -141,7 +141,7 @@ Visit [page][1] for instructions on how to generate keystore and truststore.
 ### Run EPID Verification Service
 
 #### EPID Verification Service Settings
-JVM options can be set to configure EPID Verification service:
+JVM options can be set to configure EPID Verification Service:
 
 | Java Option | Description |
 | --- | --- |
@@ -158,7 +158,7 @@ JVM options can be set to configure EPID Verification service:
 
 #### Proxy Settings
 
-* To use external Verification service from behind proxy set the following JVM flags, more info [here][2]:
+* To use external Verification Service from behind proxy, set the following JVM flags, more info [here][2]:
 ```
 https.proxyPort
 https.proxyHost
@@ -168,12 +168,12 @@ http.proxyHost
 
 #### Run EPID Verification Service
 
-To run the EPID Verification service, you can use `epidVerificationService.sh`.
+To run the EPID Verification Service, you can use `epidVerificationService.sh`.
 ```
 $ bash epidVerificationService.sh
 ```
 
-To check whether the EPID Verification service is working properly run the following command:
+To check whether the EPID Verification Service is working properly run the following command:
 ```
 $ curl --cacert ./certs/ca.cert.pem https://localhost:1180/health
 ```
