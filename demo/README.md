@@ -1,11 +1,11 @@
 
 # Table of Contents
 1. [System Requirements](#system-requirements)
-1. [Starting EPID Verification service in Docker/Podman](#starting-epid-verification-service-in-docker)
-    * [Docker/Podman Dependent Files](#docker-dependent-files)
+1. [Starting EPID Verification Service in Docker/Podman](#starting-epid-verification-service-in-docker)
+    * [Docker/Podman Dependent Files](#dockerpodman-dependent-files)
     * [Cryptomaterials Signature Verification](#cryptomaterials-signature-verification)
     * [Create Java Keystore Files](#create-java-keystore-files)
-    * [Docker-compose Configuration](#docker-compose-configuration)
+    * [Docker-Compose Configuration](#docker-compose-configuration)
 1. [Docker Commands](#docker-commands)
     * [Start the Docker Container](#start-the-docker-container)
     * [Docker Container Login](#docker-container-login)
@@ -28,11 +28,11 @@
 `Docker engine (minimum version 18.09) / Podman engine (For RHEL)`<br/><br/>
 `Docker-compose (minimum version 1.21.2) / Podman-compose (v0.1.5) (For RHEL)`<br/>
 
-# Starting EPID Verification service in Docker
+# Starting EPID Verification Service in Docker
 
 ## Docker/Podman Dependent Files
 
-The EPID Verification service requires the Cryptomaterials and the EPID SDK library files during runtime. These files are copied to the demo folder while building the source code.
+The EPID Verification Service requires the Cryptomaterials and the EPID SDK library files during runtime. These files are copied to the demo folder while building the source code.
 
 ## Cryptomaterials Signature Verification
 
@@ -46,7 +46,7 @@ Expected response: Verification successful
 ## Create Java Keystore Files
 See instructions in the [FIDO Device Onboard EPID Verification service README](https://github.com/secure-device-onboard/epid-verification-service#generate-keystores). Once the keystore file is created, update docker-compose.yml to reflect the file name, path and password. The default configured keystore is '/certs/verification-service-keystore.p12' with default password as 'ver!f!c@t!0n'.
 
-The EPID Verification service will run in HTTP mode if the keystore is not provided.
+The EPID Verification Service will run in HTTP mode if the keystore is not provided.
 
 ***IMPORTANT***:
 
@@ -56,6 +56,8 @@ The EPID Verification service will run in HTTP mode if the keystore is not provi
 Review the docker-compose.yml file and follow instructions in the file to customize for your environment.
 
 # Docker Commands
+
+NOTE:  `sudo` can be removed for docker commands to instill the principle of least privilege by adding a user to docker group in Ubuntu [REFER](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
 
 ## Start the Docker Container
 * Use the following command to start the Docker container.
@@ -102,7 +104,7 @@ $ podman exec -it <container-name> bash
   OR
 $ podman exec -it <container-id> bash
 ```
-* Your container should be in running state for login.
+* In order to login, your container should be in the running state.
 
 ## Stop the Podman Container
 

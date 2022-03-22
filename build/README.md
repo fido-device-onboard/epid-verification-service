@@ -14,6 +14,9 @@ Docker/Podman Script for Building EPID-Verification-Service repository. Using th
 
 
 ## Usage
+
+NOTE:  `sudo` can be removed for docker commands to instill the principle of least privilege by adding a user to docker group in Ubuntu [REFER](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
+
 ####  Docker Commands
 When you want to build a local copy of the repository.
 
