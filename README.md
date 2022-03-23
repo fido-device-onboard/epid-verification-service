@@ -30,7 +30,8 @@ FDO EPID Verification service is a software service that assists FDO Rendezvous 
 ***NOTE***: Use the following commands to enable EPID Verification Service support on RHEL.
 ```
 bash ./enable_rhel_support.sh
-echo $'\nexport PODMAN_USERNS=keep-id' >> ~/.bashrc
+grep -qxF 'export PODMAN_USERNS=keep-id' ~/.bashrc || echo $'\nexport PODMAN_USERNS=keep-id' >> ~/.bashrc
+grep -qxF 'export BUILDAH_FORMAT=docker' ~/.bashrc || echo $'\nexport BUILDAH_FORMAT=docker' >> ~/.bashrc
 source ~/.bashrc
 ```
 
