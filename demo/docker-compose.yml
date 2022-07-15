@@ -16,7 +16,6 @@ services:
             context: .
             dockerfile: Dockerfile-epid-verification
         restart: on-failure:5
-        network_mode: host
         healthcheck:
             test: wget --spider -Y off http://localhost:1180/health || exit 1 
             interval: 1m
