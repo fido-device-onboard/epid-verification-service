@@ -5,9 +5,9 @@ Docker/Podman Script for Building EPID-Verification-Service repository. Using th
 
 ## Prerequisites
 
-- Operating system: **Ubuntu 20.04 / RHEL 8.4.**
+- Operating system: **Ubuntu (22.04, 20.04) / RHEL 8.4.**
 
-- Docker engine : **18.06.0** / Podman engine (For RHEL).
+- Docker engine : **20.10.X** / Podman engine (For RHEL).
 
 - Docker-compose : **1.23.2** / Podman-compose: **0.1.5** (For RHEL).
 
