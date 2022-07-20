@@ -22,10 +22,10 @@
 
 # System Requirements
 
-* Operating system: Ubuntu 20.04 / RHEL 8.4.
+* Host Operating system: Ubuntu (22.04, 20.04) / RHEL (8.4, 8.6) / Debian 11.4.
 
 *  Linux packages:<br/><br/>
-`Docker engine (minimum version 18.09) / Podman engine (For RHEL)`<br/><br/>
+`Docker engine (minimum version 20.10.X) / Podman engine (For RHEL)`<br/><br/>
 `Docker-compose (minimum version 1.21.2) / Podman-compose (v0.1.5) (For RHEL)`<br/>
 
 # Starting EPID Verification Service in Docker

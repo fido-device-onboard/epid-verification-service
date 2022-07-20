@@ -15,7 +15,7 @@ FDO EPID Verification service is a software service that assists FDO Rendezvous 
 
 ### System Requirements
 
-* **Ubuntu 20.04 / RHEL 8.4**.
+* **Ubuntu (22.04, 20.04) / RHEL 8.4 / Debian 11.4**. +
 * **Maven**.
 * **Java 11**.
 * **Curl**.
@@ -24,8 +24,10 @@ FDO EPID Verification service is a software service that assists FDO Rendezvous 
 * **Make**.
 * **Swig**.
 * **Unzip**.
-* **Docker Engine 18.09 / Podman Engine**. (Optional)
+* **Docker Engine 20.10.X / Podman Engine**. (Optional)
 * **Docker-compose 1.21.2 / Podman-compose 0.1.5**. (Optional)
+
++Supported Host operating Systems.
 
 ***NOTE***: Use the following commands to enable EPID Verification Service support on RHEL.
 ```
