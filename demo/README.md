@@ -22,7 +22,7 @@
 
 # System Requirements
 
-* Operating system: Ubuntu (22.04, 20.04) / RHEL 8.4.
+* Host Operating system: Ubuntu (22.04, 20.04) / RHEL (8.4, 8.6) / Debian 11.4.
 
 *  Linux packages:<br/><br/>
 `Docker engine (minimum version 20.10.X) / Podman engine (For RHEL)`<br/><br/>
