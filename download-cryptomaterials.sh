@@ -9,7 +9,7 @@
 
 # To swtich server or HTTP mode for download, update URL variable.
 
-BASE_URL="http://verify.epid-sbx.trustedservices.intel.com"
+BASE_URL="http://verifier.fdorv.com"
 EP_CRYPTOMATERIALS_DOWNLOAD="/v1/epid/cryptomaterials/download"
 EP_CRYPTOMATERIALS_SIGNATURE="/v1/epid/cryptomaterials/signature"
 
