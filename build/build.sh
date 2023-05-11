@@ -51,7 +51,7 @@ build_source()
   mvn clean install ${MVN_CONFIG}
 }
 
-REMOTE_URL=https://github.com/secure-device-onboard/epid-verification-service.git
+REMOTE_URL=https://github.com/fido-device-onboard/epid-verification-service.git
 REMOTE_BRANCH=master
 
 if [ "$use_remote" = "1" ]; then
