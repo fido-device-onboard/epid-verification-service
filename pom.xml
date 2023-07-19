@@ -43,6 +43,7 @@
     <spring-boot-starter-data-rest.version>2.7.13</spring-boot-starter-data-rest.version>
     <spring-boot-starter-jetty.version>2.7.13</spring-boot-starter-jetty.version>
     <spring-boot-starter-validation.version>2.7.13</spring-boot-starter-validation.version>
+    <spring-hateoas.version>1.5.5</spring-hateoas.version>
     <testng.version>7.7.1</testng.version>
     <log4j2.version>2.17.1</log4j2.version>
 
@@ -70,8 +71,21 @@
       <artifactId>spring-boot-starter-data-rest</artifactId>
       <version>${spring-boot-starter-data-rest.version}</version>
       <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.hateoas</groupId>
+          <artifactId>spring-hateoas</artifactId>
+        </exclusion>
+      </exclusions> 
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework.hateoas/spring-hateoas -->
+    <dependency>
+      <groupId>org.springframework.hateoas</groupId>
+      <artifactId>spring-hateoas</artifactId>
+      <version>${spring-hateoas.version}</version>
+    </dependency>
+ 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jetty</artifactId>
