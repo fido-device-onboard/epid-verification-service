@@ -1,5 +1,5 @@
 This document contains the license agreements for third-party software
-used by the Secure Device Onboard EPIC Verifier Service
+used by the FIDO Device Onboard EPID Verifier Service
 
 -----------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ The following components are under the Eclipse Public License 2.0
 
 Java Servlet API 
 
-The source code for this component is available here - https://github.com/secure-device-onboard/release-fidoiot/releases/download/v1.1.0/third-party-components.tar.gz
+The source code for this component is available here - https://github.com/fido-device-onboard/release-fidoiot/releases/download/v1.1.0/third-party-components.tar.gz
 
 -------------------------------------------------------------------------------------
 Eclipse Public License - v 2.0

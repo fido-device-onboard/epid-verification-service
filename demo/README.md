@@ -44,7 +44,7 @@ $ openssl smime -verify -in cryptoMaterial.tgz.sig -inform der -content cryptoMa
 Expected response: Verification successful
 
 ## Create Java Keystore Files
-See instructions in the [FIDO Device Onboard EPID Verification service README](https://github.com/secure-device-onboard/epid-verification-service#generate-keystores). Once the keystore file is created, update docker-compose.yml to reflect the file name, path and password. The default configured keystore is '/certs/verification-service-keystore.p12' with default password as 'ver!f!c@t!0n'.
+See instructions in the [FIDO Device Onboard EPID Verification service README](https://github.com/fido-device-onboard/epid-verification-service#generate-keystores). Once the keystore file is created, update docker-compose.yml to reflect the file name, path and password. The default configured keystore is '/certs/verification-service-keystore.p12' with default password as 'ver!f!c@t!0n'.
 
 The EPID Verification Service will run in HTTP mode if the keystore is not provided.
 

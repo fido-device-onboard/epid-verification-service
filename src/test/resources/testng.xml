@@ -9,13 +9,6 @@
     </listeners>
     <packages>
         <test name = "EPID Verificationcle Service Authenticators Test">
-            <package name="org.fidoalliance.fdo.epid.verification.controllers.v2"/>
-            <package name="org.fidoalliance.fdo.epid.verification.logging"/>
-            <package name="org.fidoalliance.fdo.epid.verification.model.epid"/>
-            <package name="org.fidoalliance.fdo.epid.verification.model.requests"/>
-            <package name="org.fidoalliance.fdo.epid.verification.repositories"/>
-            <package name="org.fidoalliance.fdo.epid.verification.services.proof"/>
-            <package name="org.fidoalliance.fdo.epid.verification.utils"/>
         </test>
     </packages>
 </suite>
