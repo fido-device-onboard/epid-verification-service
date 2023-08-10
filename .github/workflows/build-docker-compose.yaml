@@ -1,0 +1,30 @@
+name: build epid-verification-service via docker compose
+on:
+  workflow_dispatch:
+  push:
+    branches: [master, '*rel']
+  pull_request:
+    branches: [master, '*rel']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout scm
+        uses: actions/checkout@v3
+      - name: build epid in docker compose
+        run: |
+          set -e
+          cd build
+          sed -i 's|fdouser|root|g' docker-compose.yml
+          sed -i 's|fdouser|root|g' Dockerfile
+          sed -i 's|RUN useradd.*|#RUN useradd -ms /bin/bash root|' Dockerfile
+          docker-compose up --build --exit-code-from epid-verification-service-build
+      - name: tar epid-verification-service
+        run : tar -czvf demo.tar.gz demo/
+      - name: archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: demo.tar.gz
+          path: demo.tar.gz
+          retention-days: 5
+        if: github.event_name != 'pull_request'
