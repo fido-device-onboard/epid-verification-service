@@ -39,10 +39,10 @@
     <powermock-module-testng.version>2.0.9</powermock-module-testng.version>
     <mockito-core.version>3.9.0</mockito-core.version>
     <spring-aspects.version>5.3.29</spring-aspects.version>
-    <spring-boot-maven-plugin.version>2.7.13</spring-boot-maven-plugin.version>
-    <spring-boot-starter-data-rest.version>2.7.13</spring-boot-starter-data-rest.version>
-    <spring-boot-starter-jetty.version>2.7.13</spring-boot-starter-jetty.version>
-    <spring-boot-starter-validation.version>2.7.13</spring-boot-starter-validation.version>
+    <spring-boot-maven-plugin.version>2.7.17</spring-boot-maven-plugin.version>
+    <spring-boot-starter-data-rest.version>2.7.17</spring-boot-starter-data-rest.version>
+    <spring-boot-starter-jetty.version>2.7.17</spring-boot-starter-jetty.version>
+    <spring-boot-starter-validation.version>2.7.17</spring-boot-starter-validation.version>
     <spring-hateoas.version>1.5.5</spring-hateoas.version>
     <testng.version>7.7.1</testng.version>
     <log4j2.version>2.17.1</log4j2.version>
