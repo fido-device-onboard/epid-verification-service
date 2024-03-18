@@ -32,6 +32,7 @@
     <jaxb-api.version>2.3.1</jaxb-api.version>
     <jedis.version>3.6.1</jedis.version>
     <jjwt.version>0.9.1</jjwt.version>
+    <logback.version>1.2.13</logback.version>
     <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
     <lombok.version>1.18.20</lombok.version>
     <snakeyaml.version>2.0</snakeyaml.version>
@@ -43,7 +44,6 @@
     <spring-boot-starter-data-rest.version>2.7.18</spring-boot-starter-data-rest.version>
     <spring-boot-starter-jetty.version>2.7.18</spring-boot-starter-jetty.version>
     <spring-boot-starter-validation.version>2.7.18</spring-boot-starter-validation.version>
-    <tomcat.version>10.1.19</tomcat.version>
     <testng.version>7.7.1</testng.version>
     <log4j2.version>2.17.1</log4j2.version>
 
@@ -78,19 +78,6 @@
       <artifactId>spring-boot-starter-jetty</artifactId>
       <version>${spring-boot-starter-jetty.version}</version>
       <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-tomcat</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-core</artifactId>
-      <version>${tomcat.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -102,6 +89,10 @@
           <groupId>org.yaml</groupId>
           <artifactId>snakeyaml</artifactId>
         </exclusion>
+        <exclusion>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+        </exclusion>
       </exclusions>
    </dependency>
 
@@ -111,6 +102,13 @@
       <artifactId>snakeyaml</artifactId>
       <version>${snakeyaml.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+
 
     <dependency>
       <groupId>org.springframework</groupId>

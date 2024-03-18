@@ -1,13 +1,15 @@
 FROM ubuntu:20.04
 
-RUN apt-get clean && apt-get -y update && apt-get -y upgrade
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get clean && apt-get -y update && apt-get -y upgrade && apt-get install -y openjdk-17-jdk maven make git curl swig cmake unzip software-properties-common --no-install-recommends
 
 RUN bash -c 'echo "deb http://dk.archive.ubuntu.com/ubuntu/ xenial main" >> /etc/apt/sources.list'
 RUN bash -c 'echo "deb http://dk.archive.ubuntu.com/ubuntu/ xenial universe" >> /etc/apt/sources.list'
-RUN apt-get -y update
-RUN apt-get -y install g++-4.9 g++-4.9-multilib
+
+RUN apt-get -y update && apt-get -y install g++-4.9 g++-4.9-multilib --no-install-recommends
 RUN bash -c 'head -n -2 /etc/apt/sources.list > intermediate_file;mv -f intermediate_file /etc/apt/sources.list'
-RUN apt-get -y update
+#RUN apt-get -y update
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 10
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 10
 RUN update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
