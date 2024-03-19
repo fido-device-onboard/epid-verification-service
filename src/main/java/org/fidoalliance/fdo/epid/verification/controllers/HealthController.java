@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthController {
 
-  @Autowired private HttpServletRequest request;
-
   @Autowired private InfoConfig infoConfig;
 
   /**
@@ -31,7 +29,6 @@ public class HealthController {
   @RequestMapping(value = "/health", method = RequestMethod.GET)
   @MethodCallLogged
   public ResponseEntity checkHealth() {
-    IpManager.retrieveIpFromRequest(request);
     VerificationHealthResponse hr = new VerificationHealthResponse(infoConfig.getVersion());
     return new ResponseEntity<>(hr, HttpStatus.OK);
   }
