@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get clean && apt-get -y update && apt-get -y upgrade && apt-get install -y openjdk-11-jdk maven make git curl swig cmake unzip software-properties-common --no-install-recommends
+RUN apt-get clean && apt-get -y update && apt-get -y upgrade && apt-get install -y openjdk-17-jdk maven make git curl swig cmake unzip software-properties-common --no-install-recommends
 
 RUN bash -c 'echo "deb http://dk.archive.ubuntu.com/ubuntu/ xenial main" >> /etc/apt/sources.list'
 RUN bash -c 'echo "deb http://dk.archive.ubuntu.com/ubuntu/ xenial universe" >> /etc/apt/sources.list'

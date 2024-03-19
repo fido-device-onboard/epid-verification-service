@@ -5,7 +5,6 @@ package org.fidoalliance.fdo.epid.verification.controllers;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import javax.validation.Valid;
 import javax.xml.bind.DatatypeConverter;
 import lombok.extern.slf4j.Slf4j;
 import org.fidoalliance.fdo.epid.verification.enums.EpidResource;
@@ -71,7 +70,7 @@ public class ProofController {
       produces = MediaType.APPLICATION_JSON_VALUE)
   @MethodExecutionLogged
   public ResponseEntity<ProofResponse> createProofEpid20(
-      @Valid @RequestBody ProofRequest proofRequest)
+      @RequestBody ProofRequest proofRequest)
       throws IOException, InvalidSignatureException, SigrlVersionSignatureVersionMismatchException,
           GenericVerificationException {
     ProofResponse proofResponse = handleJsonRequest(EpidVersion.EPID20, proofRequest);
@@ -96,7 +95,7 @@ public class ProofController {
       produces = MediaType.APPLICATION_JSON_VALUE)
   @MethodExecutionLogged
   public ResponseEntity<ProofResponse> createProofEpid11(
-      @Valid @RequestBody ProofRequest proofRequest)
+      @RequestBody ProofRequest proofRequest)
       throws IOException, InvalidSignatureException, SigrlVersionSignatureVersionMismatchException,
           GenericVerificationException {
     ProofResponse proofResponse = handleJsonRequest(EpidVersion.EPID11, proofRequest);

@@ -6,7 +6,6 @@ package org.fidoalliance.fdo.epid.verification.model.requests;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,13 +21,13 @@ import org.fidoalliance.fdo.epid.verification.utils.ByteBufferInputStream;
 @NoArgsConstructor
 public class ProofRequest implements RawSerializable {
 
-  @NotNull private byte[] groupId;
+  private byte[] groupId;
 
-  @NotNull private byte[] msg;
+  private byte[] msg;
 
   private byte[] basename;
 
-  @NotNull private byte[] epidSignature;
+  private byte[] epidSignature;
 
   /**
    * Parameterized constructor.
