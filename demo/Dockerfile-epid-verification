@@ -2,8 +2,7 @@
 # SPDX-License-Identifier: Apache 2.0
 
 FROM ubuntu:20.04
-RUN apt-get update && apt-get install -y openjdk-11-jdk
-RUN apt-get install -y wget openssl
+RUN apt-get update && apt-get install -y openjdk-17-jdk wget openssl --no-install-recommends
 
 # Create a user 'verifier'.
 # If the user name is updated, please update the same in cmdDocker.sh.

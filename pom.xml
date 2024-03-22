@@ -12,7 +12,7 @@
   <artifactId>epid-verification-service</artifactId>
   <name>FDO EPID Verification Service App</name>
   <packaging>jar</packaging>
-  <version>1.1.6</version>
+  <version>1.1.8</version>
   <description>FDO EPID Verification Service App</description>
  
   <!--
@@ -61,7 +61,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.17</version>
+    <version>3.2.3</version>
     <relativePath/>
   </parent>
  
@@ -91,14 +91,8 @@
       <artifactId>spring-boot-starter-jetty</artifactId>
       <version>${spring-boot-starter-jetty.version}</version>
       <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-tomcat</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
- 
+    
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
@@ -117,7 +111,7 @@
       <artifactId>snakeyaml</artifactId>
       <version>${snakeyaml.version}</version>
     </dependency>
- 
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>

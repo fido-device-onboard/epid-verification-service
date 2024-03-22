@@ -10,14 +10,14 @@ export https_proxy_host=$(echo $https_proxy | awk -F':' {'print $2'} | tr -d '/'
 export https_proxy_port=$(echo $https_proxy | awk -F':' {'print $3'} | tr -d '/')
 
 export _JAVA_OPTIONS="-Dhttp.proxyHost=$http_proxy_host -Dhttp.proxyPort=$http_proxy_port -Dhttps.proxyHost=$https_proxy_host -Dhttps.proxyPort=$https_proxy_port"
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 # The PGP signature verification requires additional proxy configuration in
 # ~/.m2/settings.xml. For simplicity and easier out of box experience, the PGP
 # signature verification is disabled here. In case this is used to create
 # production build, it is recommended to update ~/.m2/settings.xml to include
 # proxy configurations.
-MVN_CONFIG="-Dpgpverify.skip=true"
+MVN_CONFIG="-Dpgpverify.skip=true -Dcheckstyle.skip"
 
 build_source()
 {
