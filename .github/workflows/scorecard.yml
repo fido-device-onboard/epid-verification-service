@@ -12,7 +12,7 @@ on:
   schedule:
     - cron: '21 11 * * 4'
   push:
-    branches: [ "master" ]
+    branches: '*' 
 
 permissions:
   contents: read
